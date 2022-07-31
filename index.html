@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Product preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      --font-Mont: 'Montserrat', sans-serif;
+      --font-Fraun: 'Fraunces', serif;
+      --Dark-cyan: hsl(158, 36%, 38%);
+      --Cream: hsl(30, 38%, 92%);
+      --Very-dark-blue: hsl(212, 21%, 14%);
+      --Dark-grayish-blue: hsl(228, 12%, 48%);
+      --White: hsl(0, 0%, 100%);
+    }
+    .Mont {
+      font-family: var(--font-Mont);
+      font-weight: 500;
+      color:var(--Dark-grayish-blue);
+    }
+    .Fraun {
+      font-family: var(--font-Fraun);
+      font-weight: 700;
+    }
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--Cream);
+    }
+    .card {
+      position: relative;
+      width: 600px;
+      height: 450px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .img {
+      position: relative;
+      width: 100%;
+      /* min-width: 150px; */
+      height: inherit;
+      overflow: hidden;
+    }
+    .img img {
+      position: absolute;
+      width: 100%;
+      /* min-width: 30px; */
+      height: inherit;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+    }
+    .content {
+      position: relative;
+      width: 100%;
+      height: inherit;
+      padding: 0 25px;
+      display: grid;
+      align-items: stretch;
+      background: var(--White);
+    }
+    /* .content *+*:not(del) {
+      margin: 25px 0;
+    } */
+    h1 {
+      color: var(--Very-dark-blue);
+      line-height: 35px;
+    }
+    .category {
+      padding-top: 25px;
+    }
+    p {
+      line-height: 20px;
+      font-size: 14px;
+    }
+    .footer {
+      display: flex;
+    }
+    .price {
+      font-size: 30px;
+      color: var(--Dark-cyan);
+    }
+    del {
+      font-size:14px;
+      padding-left: 20px;
+      padding-top: 10px;
+    }
+    button {
+      /* position: absolute;
+      bottom: 0; */
+      width: 100%;
+      height: 45px;
+      background: var(--Dark-cyan);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* color: hsl(0, 0%, 100%); */
+      border: 1px solid var(--Dark-cyan);
+      cursor: pointer;
+      border-radius: 10px;
+      display: flex;
+      font-family: var(--font-Mont);
+      font-weight: 500;
+      font-size: 13px;
+      gap: 10px;
+    }
+    button:hover {
+      background: hsl(158, 36%, 18%);
+      border-color:hsl(158, 36%, 18%);
+    }
+    @media screen and (max-width: 560px) {
+      body {
+        font-size: 14px;
+      }
+      .card {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        height: 90vh;
+        width: 90%;
+      }
+      .img {
+        height: 40vh;
+      }
+      .content {
+        height: 50vh;
+        /* grid-template-rows: repeat(5, 1fr); */
+      }
+      h1 {
+        line-height: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Gabrielle Essence Eau De Parfum
+
+  A floral, solar and voluptuous interpretation composed by Olivier Polge, 
+  Perfumer-Creator for the House of CHANEL.
+
+  $149.99
+  $169.99
+
+  Add to Cart -->
+  
+  <div class="card">
+    <div class="img"><img src="./images/image-product-desktop.jpg"></div>
+    <div class="content">
+      <div class="Mont | category">P E R F U M E</div>
+      <h1 class="Fraun">Gabrielle Essence Eau De Parfum</h1>
+      <p class="Mont">A floral, solar and voluptuous interpretation composed by Olivier Polge, 
+        Perfumer-Creator for the House of CHANEL.</p>
+      <div class="footer">
+        <div class="Fraun | price">$149.99</div><del class="Mont">$169.99</del>
+      </div>
+      
+      <button type="button" class="Mont" style="color:hsl(0, 0%, 100%);"><svg width="15" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M14.383 10.388a2.397 2.397 0 0 0-1.518-2.222l1.494-5.593a.8.8 0 0 0-.144-.695.8.8 0 0 0-.631-.28H2.637L2.373.591A.8.8 0 0 0 1.598 0H0v1.598h.983l1.982 7.4a.8.8 0 0 0 .799.59h8.222a.8.8 0 0 1 0 1.599H1.598a.8.8 0 1 0 0 1.598h.943a2.397 2.397 0 1 0 4.507 0h1.885a2.397 2.397 0 1 0 4.331-.376 2.397 2.397 0 0 0 1.12-2.021ZM11.26 7.99H4.395L3.068 3.196h9.477L11.26 7.991Zm-6.465 6.392a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Zm6.393 0a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Z" fill="#FFF"/></svg>Add to Cart</button>
+    </div>
+  </div>
+</body>
+</html>
